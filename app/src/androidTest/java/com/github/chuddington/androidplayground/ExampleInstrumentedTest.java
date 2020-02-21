@@ -6,7 +6,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.github.chuddington.androidplayground.junit.AndroidJUnit5Extension;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,12 +17,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @ExtendWith(AndroidJUnit5Extension.class)
-public class ExampleInstrumentedTest {
+class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() {
+    void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
         assertEquals("com.github.chuddington.androidplaygroundmk2", appContext.getPackageName());
     }
+
 }
