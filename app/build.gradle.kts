@@ -54,8 +54,9 @@ dependencies {
     listOf(
         libs.androidx.test.ext.junit,
         libs.espresso.core,
-        platform(libs.compose.bom),
+        libs.navigation.testing,
         libs.ui.test.junit4,
+        platform(libs.compose.bom)
     ).forEach(::androidTestImplementation)
 
     listOf(
@@ -68,6 +69,7 @@ dependencies {
         libs.lifecycle.runtime.ktx,
         libs.activity.compose,
         libs.compose.constraintLayout,
+        libs.compose.navigation,
         platform(libs.compose.bom),
         libs.ui,
         libs.ui.graphics,
