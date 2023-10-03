@@ -13,10 +13,12 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.myapplication.categories.ConversionCategories
+import com.example.myapplication.categories.ConversionCategory
 import java.io.Serializable
 
 @Composable
-fun MainActivityRouter(
+fun AppRoutes(
     navController: NavHostController,
     startDestination: String = "/index",
 ) {
@@ -46,7 +48,7 @@ fun MainActivityRouter(
     }
 }
 
-@Suppress("UNCHECKED_CAST")
+@Suppress("DEPRECATION")
 inline fun <reified T : Serializable> Bundle.apiAwareGetSerializable(key: String): T? =
     if (VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
         this.getSerializable(key, T::class.java)

@@ -56,7 +56,7 @@ dependencies {
         libs.espresso.core,
         libs.navigation.testing,
         libs.ui.test.junit4,
-        platform(libs.compose.bom)
+        platform(libs.compose.bom),
     ).forEach(::androidTestImplementation)
 
     listOf(
