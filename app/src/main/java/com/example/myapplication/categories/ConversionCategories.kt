@@ -24,8 +24,10 @@ fun ConversionCategories(
     ConstraintLayout(
         modifier = modifier.background(MaterialTheme.colorScheme.background),
     ) {
+        val categoryRefs = mutableListOf<ConstrainedLayoutReference>()
+
         categories.forEachIndexed { index, category ->
-            ConversionCategoryButton(navController, category, index, categories)
+            ConversionCategoryButton(navController, category, categoryRefs, index, categories)
         }
     }
 }
@@ -34,11 +36,10 @@ fun ConversionCategories(
 private fun ConstraintLayoutScope.ConversionCategoryButton(
     navController: NavHostController,
     category: ConversionCategory,
+    categoryRefs: MutableList<ConstrainedLayoutReference>,
     index: Int,
     categories: Array<ConversionCategory>,
 ) {
-    val categoryRefs = mutableListOf<ConstrainedLayoutReference>()
-
     val (categoryRef) = createRefs()
     categoryRefs.add(categoryRef)
     Button(

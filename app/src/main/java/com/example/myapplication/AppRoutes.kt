@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.myapplication.categories.ConversionCategories
 import com.example.myapplication.categories.ConversionCategory
+import com.example.myapplication.categories.conversionRoutes
 import java.io.Serializable
 
 @Composable
@@ -31,20 +32,7 @@ fun AppRoutes(
                 ConversionCategories(ConversionCategory.values(), navController = navController)
             }
         }
-        composable(
-            "/convert/{category}",
-            arguments = listOf(
-                navArgument("category") {
-                    type = NavType.EnumType(type = ConversionCategory::class.java)
-                },
-            ),
-        ) { backStackEntry ->
-            val category = backStackEntry.arguments
-                ?.apiAwareGetSerializable<ConversionCategory>(
-                    "category",
-                )
-            println("Converting $category...")
-        }
+        conversionRoutes(navController)
     }
 }
 
